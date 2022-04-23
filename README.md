@@ -1,8 +1,27 @@
-# Getting Started with Create React App
+![Thumbnail GitHub](thumb.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# E-commerce Clothes
 
-## Available Scripts
+App that simulates an e-commerce of clothes
+
+## 🔨 Features
+
+- E-commerce of clothes,
+- Navigation using routes.
+- Stripe payments.
+
+
+![](ecommerce_clothes.gif)
+
+## ✔️ Techniques and technologies:
+
+- `react router`: the app uses the react-router-dom library with allow us to manipulate route, parameters and simplifies the code.
+- `componentization`: the personalizated components of the project are in the folder "components"
+- `rational use of colors`: the app uses the 60 30 10 rule for colors improving the user experience.
+- `centralization of img`: all images are centralizated in a root folder.
+
+
+## 🛠️ Running the app
 
 In the project directory, you can run:
 
@@ -45,26 +64,3 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
