@@ -16,6 +16,7 @@ App that simulates an e-commerce of clothes
 ## ✔️ Techniques and technologies:
 
 - `react router`: the app uses the react-router-dom library with allow us to manipulate route, parameters and simplifies the code.
+- `outlet`: nested router inside the page, improves the performance, makes easy to split the code in components.
 - `componentization`: the personalizated components of the project are in the folder "components"
 - `rational use of colors`: the app uses the 60 30 10 rule for colors improving the user experience.
 - `centralization of img`: all images are centralizated in a root folder.
