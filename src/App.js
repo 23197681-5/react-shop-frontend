@@ -7,12 +7,14 @@ const Shop = () => {
 };
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigation />}>
-        <Route index element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-      </Route>
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
