@@ -1,5 +1,4 @@
 import { Outlet, Link } from "react-router-dom";
-import { Fragment } from "react";
 import "./navigation.styles.scss";
 import { ReactComponent as ShopLogo } from "../../assets/loja.svg";
 const Navigation = () => {
