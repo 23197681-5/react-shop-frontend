@@ -32,14 +32,11 @@ const SignUpForm = () => {
       return;
     }
     try {
-      console.log("reseting 2");
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log("reseting 1");
       await createUserDocumentFromAuth(user, { displayName });
-      console.log("reseting");
       resetFormFields();
       document.getElementByClassName("sign-up-form").reset();
     } catch (error) {
@@ -52,7 +49,10 @@ const SignUpForm = () => {
   const handleChange = (event) => {
     console.log(event);
     const { name, value } = event.target;
-    setFormFields({ ...formFields, [name]: value });
+    setFormFields({
+      ...formFields,
+      [name]: value,
+    });
   };
   return (
     <div className="sign-up-form sing-up-container">
