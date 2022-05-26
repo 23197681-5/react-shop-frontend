@@ -4,12 +4,14 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { UserProvier } from "./contexts/user.context";
-
+import { ProductsProvier } from "./contexts/products.context";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserProvier>
-      <App />
+      <ProductsProvier>
+        <App />
+      </ProductsProvier>
     </UserProvier>
   </React.StrictMode>
 );
