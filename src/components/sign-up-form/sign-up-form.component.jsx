@@ -23,11 +23,8 @@ const SignUpForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(event.target);
-    console.log(formFields);
     const { email, password, confirmPassword } = formFields;
     if (password.value !== confirmPassword.value) {
-      console.log("error");
       alert("Inputs dont match");
       return;
     }
@@ -41,13 +38,12 @@ const SignUpForm = () => {
       document.getElementByClassName("sign-up-form").reset();
     } catch (error) {
       if (error.code == "auth/email-already-in-use") {
-        console.log(error.message);
+        alert(error.message);
       }
     }
   };
 
   const handleChange = (event) => {
-    console.log(event);
     const { name, value } = event.target;
     setFormFields({
       ...formFields,

@@ -9,9 +9,6 @@ export const ProductsContext = createContext({
 export const ProductsProvier = ({ children }) => {
   const [currentProducts, setCurrenProducts] = useState(PRODUCTS);
   const valueSharer = { currentProducts, setCurrenProducts };
-  useEffect(() => {
-    fetch();
-  }, []);
 
   return (
     <ProductsContext.Provider value={valueSharer}>

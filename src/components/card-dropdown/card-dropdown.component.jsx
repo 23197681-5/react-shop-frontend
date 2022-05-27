@@ -10,7 +10,9 @@ const CardDropdown = (cartItems?) => {
           <span className="empty-message">Your cart is empty</span>
         )}
       </div>
-      <Button onClick={() => {}}>GO TO CHECKOUT</Button>
+      <div className="button">
+        <Button onClick={() => {}}>GO TO CHECKOUT</Button>
+      </div>
     </div>
   );
 };

@@ -1,14 +1,17 @@
 .navigation {
-    height: 70px;
+    height: 90px;
     width: 100%;
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    // color: white;
   
     .logo-container {
       height: 100%;
       width: 90px;
       padding: 25px;
+      // filter: invert(100%);
     }
   
     .nav-links-container {
@@ -22,6 +25,7 @@
       .nav-link {
         padding: 10px 15px;
         cursor: pointer;
+        // color: white;
       }
     }
   }
@@ -33,7 +37,7 @@
   .infoi {
     width: 100vw;
     height: 100%;
-    background-color: aliceblue;
+    // background-color: black;
     position: absolute;
  
   }
@@ -43,7 +47,6 @@
     border: 1px solid black;
     background-color: white;
     position: relative;
-    margin-right: 20vw !important;
     overflow-x: hidden;
     z-index: 1 !important;
   }
