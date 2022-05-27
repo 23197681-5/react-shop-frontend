@@ -38,9 +38,14 @@ const Navigation = () => {
           </div>
         </nav>
       </nav>
-
-      {/* <CardDropdown /> */}
-      <Outlet />
+      <div className="container">
+        <div className="infoi">
+          <Outlet />
+        </div>
+        <div className="navi">
+          <CardDropdown />
+        </div>
+      </div>
     </div>
   );
 };

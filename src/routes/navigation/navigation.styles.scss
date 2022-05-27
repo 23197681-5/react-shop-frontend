@@ -17,6 +17,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      position: relative;
   
       .nav-link {
         padding: 10px 15px;
@@ -24,3 +25,37 @@
       }
     }
   }
+
+  .container {
+    position: absolute;
+    display: flex;
+  }
+  .infoi {
+    width: 100vw;
+    height: 100%;
+    background-color: aliceblue;
+    position: absolute;
+ 
+  }
+  .navi{   
+    width: 240px;
+    height: 340px;
+    border: 1px solid black;
+    background-color: white;
+    position: relative;
+    margin-right: 20vw !important;
+    overflow-x: hidden;
+    z-index: 1 !important;
+  }
+  @media (min-width: 1200px) {
+    .navi{
+    margin-left: 82vw;
+    }
+  }
+  @media (max-width:1200px) {
+    .navi{
+    margin-left: 74vw;
+    }
+  }
+
+  
