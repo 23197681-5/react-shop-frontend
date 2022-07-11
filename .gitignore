@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 /src/utils/firebase/firebase.utils.js
 .env
+
+# Local Netlify folder
+.netlify
