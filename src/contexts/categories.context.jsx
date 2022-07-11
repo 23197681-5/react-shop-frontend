@@ -13,7 +13,6 @@ export const CategoriesProvider = ({ children }) => {
   // useEffect(() => { for adding sample data
   //   addCollectionsAndDocuments("categories", SHOP_DATA);
   // }, []);
-  console.log(categoriesMap);
   useEffect(() => {
     setCategoriesMap(SHOP_DATA);
   }, SHOP_DATA);
