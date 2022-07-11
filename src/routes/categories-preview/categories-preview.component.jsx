@@ -1,5 +1,9 @@
 import ProductCard from "../../components/product-card/product-card.component";
-import "./category-preview.styles.scss";
+import {
+  CategoryPreviewContainer,
+  CategoryPreviewDiv,
+  CategoryPreviewTitle,
+} from "./category-preview.styles";
 import SHOP_DATA from "../../shop-data";
 import { Link } from "react-router-dom";
 const CategoryPreview = () => {
@@ -11,20 +15,20 @@ const CategoryPreview = () => {
       {SHOP_DATA.map((category) => {
         console.log(category);
         return (
-          <div className="category-preview-container" key={category.title}>
+          <CategoryPreviewContainer key={category.title}>
             <h2>
-              <Link to={"/" + category.title.toLowerCase()} className="title">
+              <CategoryPreviewTitle to={"/" + category.title.toLowerCase()}>
                 {category.title.toUpperCase()} &gt;
-              </Link>
+              </CategoryPreviewTitle>
             </h2>
-            <div className="preview">
+            <CategoryPreviewDiv>
               {category.items
                 .filter((_, idx) => idx < 4)
                 .map((product) => {
                   return <ProductCard key={product.id} product={product} />;
                 })}
-            </div>
-          </div>
+            </CategoryPreviewDiv>
+          </CategoryPreviewContainer>
         );
       })}
     </>

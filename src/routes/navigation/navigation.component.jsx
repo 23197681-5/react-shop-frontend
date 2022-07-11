@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/cart.context";
 import { UserContext } from "../../contexts/user.context";
 import { ReactComponent as ShopLogo } from "../../assets/loja.svg";
-import CardIcon from "../../components/card-icon/card-icon.component";
+import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 const Navigation = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
@@ -37,7 +37,7 @@ const Navigation = () => {
             <NavLink to="auth">SIGN IN</NavLink>
           )}
           <LogoContainer as="div">
-            <CardIcon />
+            <CartIcon />
           </LogoContainer>
         </NavLinksContainer>
       </NavigationContainer>
