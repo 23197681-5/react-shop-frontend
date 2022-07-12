@@ -1,30 +1,40 @@
 import { createContext, useState, useEffect } from "react";
-import SHOP_DATA from "../shop-data.js";
-// import { getCategoriesAndDocuments } from "../utils/firebase/firebase.utils";
-// import { addCollectionsAndDocuments } from "../utils/firebase/firebase.utils.js";
+import { gql, useQuery } from "@apollo/client";
+
 export const CategoriesContext = createContext({
   categoriesMap: {},
   setCategoriesMap: () => null,
 });
 
+const COLLECTIONS = gql`
+  query GetCollections {
+    collections {
+      id
+      title
+      items {
+        id
+        name
+        price
+        imageUrl
+      }
+  }
+`;
 //provider alias component
 export const CategoriesProvider = ({ children }) => {
-  const [categoriesMap, setCategoriesMap] = useState(SHOP_DATA);
-  // useEffect(() => { for adding sample data
-  //   addCollectionsAndDocuments("categories", SHOP_DATA);
-  // }, []);
+  const { loading, error, data } = useQuery(COLLECTIONS);
+  const [categoriesMap, setCategoriesMap] = useState({});
   useEffect(() => {
-    setCategoriesMap(SHOP_DATA);
-  }, SHOP_DATA);
-  // useEffect(() => {
-  //   const getCategoriesMap = async () => {
-  //     const categoryMap = await getCategoriesAndDocuments();
-  //     console.log(categoryMap);
-  //     if (categoriesMap !== categoryMap) setCategoriesMap(categoryMap);
-  //   };
-  //   getCategoriesMap();
-  // });
-  const valueSharer = { categoriesMap, setCategoriesMap };
+    if (data) {
+      const { collections } = data;
+      const collectionsMap = collections.reduce((acc, collection) => {
+        const { title, items } = collection;
+        acc[title.toLowerCase()] = items;
+        return acc;
+      }, {});
+      setCategoriesMap(collectionsMap);
+    }
+  }, [data]);
+  const valueSharer = { categoriesMap, setCategoriesMap, loading };
 
   return (
     <CategoriesContext.Provider value={valueSharer}>

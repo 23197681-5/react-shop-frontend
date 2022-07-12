@@ -3,30 +3,36 @@ import { useContext, useState, useEffect } from "react";
 import ProductCard from "../../components/product-card/product-card.component";
 import { CategoriesContext } from "../../contexts/categories.context";
 import { CategoryContainer, CategoryTitle } from "./category.styles";
-
+import Spinner from "../../components/spinner/spinner.component";
 const Category = ({ category }) => {
-  //   const { category } = useParams();
-  const { categoriesMap } = useContext(CategoriesContext);
+  const { categoriesMap, loading } = useContext(CategoriesContext);
   const [products, setProducts] = useState(
     categoriesMap.filter((obj) => obj.title.toLowerCase() === category)[0].items
   );
 
   useEffect(() => {
-    // setProducts(categoriesMap);
+    setProducts(categoriesMap);
   }, [category]);
   return (
     <>
-      <CategoryTitle>
-        {
-          categoriesMap.filter((obj) => obj.title.toLowerCase() === category)[0]
-            .title
-        }
-      </CategoryTitle>
-      <CategoryContainer>
-        {products?.map((product) => {
-          return <ProductCard key={product.id} product={product} />;
-        })}
-      </CategoryContainer>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div>
+          <CategoryTitle>
+            {
+              categoriesMap.filter(
+                (obj) => obj.title.toLowerCase() === category
+              )[0].title
+            }
+          </CategoryTitle>
+          <CategoryContainer>
+            {products?.map((product) => {
+              return <ProductCard key={product.id} product={product} />;
+            })}
+          </CategoryContainer>
+        </div>
+      )}
     </>
   );
 };

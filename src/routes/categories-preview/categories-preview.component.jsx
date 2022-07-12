@@ -4,16 +4,15 @@ import {
   CategoryPreviewDiv,
   CategoryPreviewTitle,
 } from "./category-preview.styles";
-import SHOP_DATA from "../../shop-data";
+import { CategoriesContext } from "../../contexts/categories.context";
+import { useContext } from "react";
+import Spinner from "../../components/spinner/spinner.component";
 import { Link } from "react-router-dom";
 const CategoryPreview = () => {
-  const categoryTitle = SHOP_DATA[0].title;
-  console.log(categoryTitle);
-  const products = SHOP_DATA[0].items;
+  const { categoriesMap, loading } = useContext(CategoriesContext);
   return (
     <>
-      {SHOP_DATA.map((category) => {
-        console.log(category);
+      {categoriesMap.map((category) => {
         return (
           <CategoryPreviewContainer key={category.title}>
             <h2>
