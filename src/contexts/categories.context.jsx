@@ -7,7 +7,7 @@ export const CategoriesContext = createContext({
 });
 
 const COLLECTIONS = gql`
-  query GetCollections {
+  query {
     collections {
       id
       title
@@ -17,6 +17,7 @@ const COLLECTIONS = gql`
         price
         imageUrl
       }
+    }
   }
 `;
 //provider alias component

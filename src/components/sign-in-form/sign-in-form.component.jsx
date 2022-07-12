@@ -6,7 +6,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
-import { SignInContainer } from "./sign-in-form.styles";
+import { ButtonsContainer, SignInContainer } from "./sign-in-form.styles";
 
 const defaultFormFields = {
   email: "",
@@ -53,40 +53,42 @@ const SignInForm = () => {
     });
   };
   return (
-    <SignInContainer>
-      <h2>Already have an account?</h2>
-      <h1>Sign in with email and password</h1>
-      <form>
-        <FormInput
-          label="Email"
-          type="email"
-          onChange={handleChange}
-          name="email"
-          required
-        ></FormInput>
+    <>
+      <SignInContainer>
+        <h3>Already have an account?</h3>
+        <h1>Sign in with email and password</h1>
+        <form>
+          <FormInput
+            label="Email"
+            type="email"
+            onChange={handleChange}
+            name="email"
+            required
+          ></FormInput>
 
-        <FormInput
-          label="Password"
-          type="password"
-          onChange={handleChange}
-          name="password"
-          required
-        ></FormInput>
-        <div>
-          <Button type="action" onClick={handleSubmit}>
-            Sign-in
-          </Button>
+          <FormInput
+            label="Password"
+            type="password"
+            onChange={handleChange}
+            name="password"
+            required
+          ></FormInput>
+          <ButtonsContainer>
+            <Button type="action" onClick={handleSubmit}>
+              Sign-in
+            </Button>
 
-          <Button
-            type="action"
-            buttonType={BUTTON_TYPE_CLASSES.google}
-            onClick={SignInWithGoogle()}
-          >
-            Google sign-in
-          </Button>
-        </div>
-      </form>
-    </SignInContainer>
+            <Button
+              type="action"
+              buttonType={BUTTON_TYPE_CLASSES.google}
+              onClick={SignInWithGoogle()}
+            >
+              Google sign-in
+            </Button>
+          </ButtonsContainer>
+        </form>
+      </SignInContainer>
+    </>
   );
 };
 

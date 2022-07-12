@@ -12,24 +12,30 @@ const CategoryPreview = () => {
   const { categoriesMap, loading } = useContext(CategoriesContext);
   return (
     <>
-      {categoriesMap.map((category) => {
-        return (
-          <CategoryPreviewContainer key={category.title}>
-            <h2>
-              <CategoryPreviewTitle to={"/" + category.title.toLowerCase()}>
-                {category.title.toUpperCase()} &gt;
-              </CategoryPreviewTitle>
-            </h2>
-            <CategoryPreviewDiv>
-              {category.items
-                .filter((_, idx) => idx < 4)
-                .map((product) => {
-                  return <ProductCard key={product.id} product={product} />;
-                })}
-            </CategoryPreviewDiv>
-          </CategoryPreviewContainer>
-        );
-      })}
+      {loading ? (
+        <Spinner></Spinner>
+      ) : (
+        (console.log(categoriesMap),
+        Object.keys(categoriesMap).map((title) => {
+          const products = categoriesMap[title];
+          return (
+            <CategoryPreviewContainer key={title}>
+              <h2>
+                <CategoryPreviewTitle to={"/" + title.toLowerCase()}>
+                  {title.toUpperCase()} &gt;
+                </CategoryPreviewTitle>
+              </h2>
+              <CategoryPreviewDiv>
+                {products
+                  .filter((_, idx) => idx < 4)
+                  .map((product) => {
+                    return <ProductCard key={product.id} product={product} />;
+                  })}
+              </CategoryPreviewDiv>
+            </CategoryPreviewContainer>
+          );
+        }))
+      )}
     </>
   );
 };

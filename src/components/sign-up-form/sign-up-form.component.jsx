@@ -52,7 +52,8 @@ const SignUpForm = () => {
   };
   return (
     <SignUpContainer>
-      <h2>Don't have an account?</h2>
+      <h3>Don't have an account?</h3>
+      <br></br>
       <h1>Sign Up</h1>
       <form>
         <FormInput
